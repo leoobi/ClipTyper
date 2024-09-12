@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\l.oberndorfer\\Desktop\\TypeClipboard\\TypeClipboard\\TypeClipboard.csproj": {}
+    "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\TypeClipboard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\l.oberndorfer\\Desktop\\TypeClipboard\\TypeClipboard\\TypeClipboard.csproj": {
+    "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\TypeClipboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\l.oberndorfer\\Desktop\\TypeClipboard\\TypeClipboard\\TypeClipboard.csproj",
+        "projectUniqueName": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\TypeClipboard.csproj",
         "projectName": "TypeClipboard",
-        "projectPath": "C:\\Users\\l.oberndorfer\\Desktop\\TypeClipboard\\TypeClipboard\\TypeClipboard.csproj",
-        "packagesPath": "C:\\Users\\l.oberndorfer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\l.oberndorfer\\Desktop\\TypeClipboard\\TypeClipboard\\obj\\",
+        "projectPath": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\TypeClipboard.csproj",
+        "packagesPath": "C:\\Users\\leoob\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\l.oberndorfer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\leoob\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
