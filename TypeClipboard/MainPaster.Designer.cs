@@ -36,13 +36,16 @@
             button3 = new Button();
             chkEnter = new CheckBox();
             toolTip1 = new ToolTip(components);
-            hkBtn = new Button();
+            pasteHKBtn = new Button();
+            cancelHKBtn = new Button();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(12, 12);
+            textBox1.Location = new Point(12, 30);
             textBox1.Name = "textBox1";
             textBox1.ReadOnly = true;
             textBox1.Size = new Size(230, 22);
@@ -50,7 +53,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(248, 12);
+            button1.Location = new Point(248, 30);
             button1.Name = "button1";
             button1.Size = new Size(85, 22);
             button1.TabIndex = 1;
@@ -60,7 +63,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(248, 67);
+            button2.Location = new Point(248, 147);
             button2.Name = "button2";
             button2.Size = new Size(85, 22);
             button2.TabIndex = 4;
@@ -71,7 +74,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(12, 67);
+            textBox2.Location = new Point(12, 147);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
             textBox2.Size = new Size(230, 22);
@@ -79,9 +82,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(12, 39);
+            button3.AccessibleName = "c2bHKBtn";
+            button3.Location = new Point(12, 87);
             button3.Name = "button3";
-            button3.Size = new Size(154, 22);
+            button3.Size = new Size(155, 22);
             button3.TabIndex = 6;
             button3.Text = "Copy clipboard to buffer";
             button3.UseVisualStyleBackColor = true;
@@ -90,7 +94,7 @@
             // chkEnter
             // 
             chkEnter.AutoSize = true;
-            chkEnter.Location = new Point(248, 42);
+            chkEnter.Location = new Point(248, 87);
             chkEnter.Name = "chkEnter";
             chkEnter.Size = new Size(85, 19);
             chkEnter.TabIndex = 7;
@@ -103,22 +107,56 @@
             // 
             toolTip1.ShowAlways = true;
             // 
-            // hkBtn
+            // pasteHKBtn
             // 
-            hkBtn.AccessibleName = "hkBtn";
-            hkBtn.Location = new Point(167, 38);
-            hkBtn.Name = "hkBtn";
-            hkBtn.Size = new Size(75, 23);
-            hkBtn.TabIndex = 8;
-            hkBtn.Text = "Hotkey: F8";
-            hkBtn.UseVisualStyleBackColor = true;
-            hkBtn.Click += HotkeyBtn_Click;
+            pasteHKBtn.AccessibleName = "";
+            pasteHKBtn.Location = new Point(12, 58);
+            pasteHKBtn.Name = "pasteHKBtn";
+            pasteHKBtn.Size = new Size(155, 23);
+            pasteHKBtn.TabIndex = 8;
+            pasteHKBtn.Text = "Paste Hotkey: F8";
+            pasteHKBtn.UseVisualStyleBackColor = true;
+            pasteHKBtn.Click += Paste_HK_Btn_Click;
+            // 
+            // cancelHKBtn
+            // 
+            cancelHKBtn.AccessibleName = "";
+            cancelHKBtn.Location = new Point(178, 58);
+            cancelHKBtn.Name = "cancelHKBtn";
+            cancelHKBtn.Size = new Size(155, 23);
+            cancelHKBtn.TabIndex = 9;
+            cancelHKBtn.Text = "Cancel Hotkey: F8";
+            cancelHKBtn.UseVisualStyleBackColor = true;
+            cancelHKBtn.Click += Cancel_HK_Btn_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(87, 15);
+            label1.TabIndex = 10;
+            label1.Text = "Clipboard Text";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(12, 129);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 15);
+            label2.TabIndex = 11;
+            label2.Text = "Buffer Text";
             // 
             // MainPaster
             // 
             AutoScaleMode = AutoScaleMode.None;
-            ClientSize = new Size(345, 101);
-            Controls.Add(hkBtn);
+            ClientSize = new Size(345, 183);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(cancelHKBtn);
+            Controls.Add(pasteHKBtn);
             Controls.Add(chkEnter);
             Controls.Add(button3);
             Controls.Add(textBox2);
@@ -147,7 +185,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox chkEnter;
         private System.Windows.Forms.ToolTip toolTip1;
-        private Button hkBtn;
+        private Button pasteHKBtn;
+        private Button cancelHKBtn;
+        private Label label1;
+        private Label label2;
     }
 }
 

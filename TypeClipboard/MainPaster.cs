@@ -1,4 +1,6 @@
-﻿namespace TypeClipboard
+﻿using TypeClipboard.LLL;
+
+namespace TypeClipboard
 {
     public partial class MainPaster : Form
     {
@@ -13,10 +15,10 @@
         private ToolStripMenuItem showMenuItem;
 
         private static MainPaster? instance;
-        private bool listening;
+        private HotkeyTypes? listening;
         private bool initiateTermination = false;
 
-        public bool Listening { get => listening; set => listening = value; }
+        public HotkeyTypes? Listening { get => listening; set => listening = value; }
 
         public static MainPaster GetInstance() => instance == null ? instance = new MainPaster() : instance;
 
@@ -94,7 +96,7 @@
         {
             keyboardListener.HookKeyboard();
             mouseListener.HookMouse();
-            hkBtn.Text = "Hotkey: " + Properties.Settings.Default.Hotkey;
+            pasteHKBtn.Text = "Hotkey: " + Properties.Settings.Default.PasteHotkey;
 
             chkEnter.Checked = Properties.Settings.Default.enableEnter;
 
@@ -121,16 +123,30 @@
             Properties.Settings.Default.Save();
         }
 
-        private void HotkeyBtn_Click(object sender, EventArgs e)
+        private void Paste_HK_Btn_Click(object sender, EventArgs e)
         {
-            Listening = true;
-            hkBtn.Text = "Listening...";
+            Listening = HotkeyTypes.PASTE;
+            pasteHKBtn.Text = "Listening...";
         }
 
-        public void SetHK(String key)
+        private void Cancel_HK_Btn_Click(object sender, EventArgs e)
         {
-            hkBtn.Text = "Hotkey: " + key;
-            Listening = false;
+            Listening = HotkeyTypes.CANCEL;
+            cancelHKBtn.Text = "Listening...";
+        }
+
+        public void SetHK(String key, HotkeyTypes? hkt)
+        {
+            switch (hkt)
+            {
+                case HotkeyTypes.PASTE:
+                    pasteHKBtn.Text = "Hotkey: " + key;
+                    break;
+                case HotkeyTypes.CANCEL:
+                    cancelHKBtn.Text = "Hotkey: " + key;
+                    break;
+            }
+            Listening = null;
         }
 
         private void ShowForm(object? sender, EventArgs? e)

@@ -7,6 +7,9 @@ namespace TypeClipboard
     {
         public static Char[] specialChars = ['+', '%', '~', '(', ')', '{', '}', '[', ']'];
         private static bool autoSubmit = false;
+        private static bool typing = false;
+
+        public static bool IsTyping { get => typing; set => typing = value; }
         public static bool AutoSubmit { get => autoSubmit; set => autoSubmit = value; }
 
         [DllImport("user32.dll")]
@@ -17,8 +20,13 @@ namespace TypeClipboard
             if (GetForegroundWindow() == ActivePaster.getInstance().Handle) return;
             await Task.Run(() =>
             {
+                IsTyping = true;
                 foreach (Char c in str.ToCharArray())
                 {
+                    if (!IsTyping)
+                    {
+                        return;
+                    }
                     if (specialChars.Contains(c))
                     {
                         SendKeys.SendWait("{" + c + "}");
@@ -35,6 +43,7 @@ namespace TypeClipboard
                 {
                     SendKeys.SendWait("{ENTER}");
                 }
+                IsTyping = false;
             });
         }
 
@@ -119,6 +128,5 @@ namespace TypeClipboard
 
             SendInput((uint)inputs.Length, inputs, Marshal.SizeOf(typeof(INPUT)));
         }
-
     }
 }

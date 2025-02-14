@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|c:\\users\\leoob\\onedrive\\files\\my_programs\\cliptyper\\typeclipboard\\typer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|solutionrelative:typeclipboard\\typer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|c:\\users\\leoob\\onedrive\\files\\my_programs\\cliptyper\\typeclipboard\\lll\\lowlevelkeyboardlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|solutionrelative:typeclipboard\\lll\\lowlevelkeyboardlistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|c:\\users\\leoob\\onedrive\\files\\my_programs\\cliptyper\\typeclipboard\\lll\\lowlevelmouselistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|solutionrelative:typeclipboard\\lll\\lowlevelmouselistener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|c:\\users\\leoob\\onedrive\\files\\my_programs\\cliptyper\\typeclipboard\\mainpaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|solutionrelative:typeclipboard\\mainpaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|c:\\users\\leoob\\onedrive\\files\\my_programs\\cliptyper\\typeclipboard\\mainpaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|solutionrelative:typeclipboard\\mainpaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|c:\\users\\leoob\\onedrive\\files\\my_programs\\cliptyper\\typeclipboard\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|solutionrelative:typeclipboard\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|c:\\users\\leoob\\onedrive\\files\\my_programs\\cliptyper\\typeclipboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{895467C0-F658-40F6-BE2E-26FD1B7066BC}|TypeClipboard\\TypeClipboard.csproj|solutionrelative:typeclipboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,15 +38,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Typer.cs",
+              "DocumentMoniker": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\Typer.cs",
+              "RelativeDocumentMoniker": "TypeClipboard\\Typer.cs",
+              "ToolTip": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\Typer.cs*",
+              "RelativeToolTip": "TypeClipboard\\Typer.cs*",
+              "ViewState": "AgIAACcAAAAAAAAAAIAwwBoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T07:43:34.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "TypeClipboard\\Properties\\Settings.settings",
+              "ToolTip": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\Properties\\Settings.settings",
+              "RelativeToolTip": "TypeClipboard\\Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2025-02-14T08:15:56.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LowLevelKeyboardListener.cs",
+              "DocumentMoniker": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\LLL\\LowLevelKeyboardListener.cs",
+              "RelativeDocumentMoniker": "TypeClipboard\\LLL\\LowLevelKeyboardListener.cs",
+              "ToolTip": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\LLL\\LowLevelKeyboardListener.cs*",
+              "RelativeToolTip": "TypeClipboard\\LLL\\LowLevelKeyboardListener.cs*",
+              "ViewState": "AgIAAEYAAAAAAAAAAIAwwFgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T07:42:09.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LowLevelMouseListener.cs",
+              "DocumentMoniker": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\LLL\\LowLevelMouseListener.cs",
+              "RelativeDocumentMoniker": "TypeClipboard\\LLL\\LowLevelMouseListener.cs",
+              "ToolTip": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\LLL\\LowLevelMouseListener.cs",
+              "RelativeToolTip": "TypeClipboard\\LLL\\LowLevelMouseListener.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAUwIEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T07:39:29.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainPaster.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\MainPaster.cs",
+              "RelativeDocumentMoniker": "TypeClipboard\\MainPaster.cs",
+              "ToolTip": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\MainPaster.cs [Design]",
+              "RelativeToolTip": "TypeClipboard\\MainPaster.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T07:28:19.054Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainPaster.cs",
+              "DocumentMoniker": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\MainPaster.cs",
+              "RelativeDocumentMoniker": "TypeClipboard\\MainPaster.cs",
+              "ToolTip": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\MainPaster.cs",
+              "RelativeToolTip": "TypeClipboard\\MainPaster.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAgwJkAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T07:23:25.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\leoob\\OneDrive\\Files\\My_Programs\\ClipTyper\\TypeClipboard\\Program.cs",
               "RelativeDocumentMoniker": "TypeClipboard\\Program.cs",

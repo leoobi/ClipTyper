@@ -2,11 +2,14 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TypeClipboard.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Hotkey" Type="System.String" Scope="User">
+    <Setting Name="PasteHotkey" Type="System.String" Scope="User">
       <Value Profile="(Default)">F8</Value>
     </Setting>
     <Setting Name="enableEnter" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CancelHotkey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">F7</Value>
     </Setting>
   </Settings>
 </SettingsFile>
