@@ -10,6 +10,8 @@ namespace TypeClipboard.LLL
         private const int WH_KEYBOARD_LL = 13;
         private const int WM_KEYDOWN = 0x0100;
         private const int WM_SYSKEYDOWN = 0x0104;
+        private const int WM_KEYUP = 0x0101;
+        private const int WM_SYSKEYUP = 0x0105;
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern nint SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, nint hMod, uint dwThreadId);
@@ -58,47 +60,86 @@ namespace TypeClipboard.LLL
             return nint.Zero;
         }
 
+        private static HashSet<Key> _currentKeys = new HashSet<Key>();
+
+        private string? _currentHotkeyCandidate = null;
+
         private nint HookCallback(int nCode, nint wParam, nint lParam)
         {
-            if (nCode >= 0 && wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN)
+            if (nCode >= 0)
             {
                 int vkCode = Marshal.ReadInt32(lParam);
-                Key keyPressed = KeyInterop.KeyFromVirtualKey(vkCode);
+                Key key = KeyInterop.KeyFromVirtualKey(vkCode);
 
-                KeysConverter kc = new KeysConverter();
-                string key = kc.ConvertToString(keyPressed)!;
-
-                var hkType = MainPaster.GetInstance().Listening;
-                if (hkType != null)
+                if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN)
                 {
-                    switch (hkType)
+                    _currentKeys.Add(key);
+                    _currentHotkeyCandidate = GetCombinationString(_currentKeys);
+
+                    if (MainPaster.GetInstance().Listening == null)
                     {
-                        case HotkeyTypes.PASTE:
-                            Properties.Settings.Default.PasteHotkey = key;
-                            break;
-                        case HotkeyTypes.CANCEL:
-                            Properties.Settings.Default.CancelHotkey = key;
-                            break;
+                        if (_currentHotkeyCandidate.Equals(Properties.Settings.Default.PasteHotkey, StringComparison.OrdinalIgnoreCase) && !Typer.IsTyping)
+                        {
+                            Typer.TypeClipboard();
+                            return new nint(1);
+                        }
+                        else if (_currentHotkeyCandidate.Equals(Properties.Settings.Default.CancelHotkey, StringComparison.OrdinalIgnoreCase))
+                        {
+                            Typer.IsTyping = false;
+                            return new nint(1);
+                        }
+                    } else
+                    {
+                        return new nint(1);
                     }
-                    Properties.Settings.Default.Save();
-                    MainPaster.GetInstance().SetHK(key, hkType);
-                    return new nint(1);
-                }
-                else if (key == Properties.Settings.Default.PasteHotkey && !Typer.IsTyping)
-                {
-                    Typer.TypeClipboard();
-                    return new nint(1);
-                } else if(key == Properties.Settings.Default.CancelHotkey)
-                {
-                    Typer.IsTyping = false;
-                    return new nint(1);
-                }
 
-                if (OnKeyPressed != null) { OnKeyPressed(this, new KeyPressedArgs(keyPressed)); }
+                    OnKeyPressed?.Invoke(this, new KeyPressedArgs(key));
+                }
+                else if (wParam == WM_KEYUP || wParam == WM_SYSKEYUP)
+                {
+                    _currentKeys.Remove(key);
+
+                    if (_currentKeys.Count == 0 && MainPaster.GetInstance().Listening != null)
+                    {
+                        var hkType = MainPaster.GetInstance().Listening;
+                        if (!string.IsNullOrEmpty(_currentHotkeyCandidate))
+                        {
+                            switch (hkType)
+                            {
+                                case HotkeyTypes.PASTE:
+                                    Properties.Settings.Default.PasteHotkey = _currentHotkeyCandidate;
+                                    break;
+                                case HotkeyTypes.CANCEL:
+                                    Properties.Settings.Default.CancelHotkey = _currentHotkeyCandidate;
+                                    break;
+                            }
+                            Properties.Settings.Default.Save();
+                            MainPaster.GetInstance().SetHK(_currentHotkeyCandidate, hkType);
+                            MainPaster.GetInstance().Listening = null;
+                        }
+                        _currentHotkeyCandidate = null;
+                    }
+                }
             }
 
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
+        }
 
+        private string GetCombinationString(IEnumerable<Key> keys)
+        {
+            KeysConverter kc = new KeysConverter();
+            var orderedKeys = keys.OrderBy(k =>
+            {
+                if (k == Key.LeftCtrl || k == Key.RightCtrl)
+                    return 0;
+                if (k == Key.LeftShift || k == Key.RightShift)
+                    return 1;
+                if (k == Key.LeftAlt || k == Key.RightAlt)
+                    return 2;
+                return 3;
+            }).ThenBy(k => kc.ConvertToString(k));
+
+            return string.Join("+", orderedKeys.Select(k => kc.ConvertToString(k)));
         }
     }
 
