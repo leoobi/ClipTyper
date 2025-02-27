@@ -96,7 +96,8 @@ namespace TypeClipboard
         {
             keyboardListener.HookKeyboard();
             mouseListener.HookMouse();
-            pasteHKBtn.Text = "Hotkey: " + Properties.Settings.Default.PasteHotkey;
+            pasteHKBtn.Text = "Paste Hotkey: " + Properties.Settings.Default.PasteHotkey;
+            cancelHKBtn.Text = "Cancel Hotkey: " + Properties.Settings.Default.CancelHotkey;
 
             chkEnter.Checked = Properties.Settings.Default.enableEnter;
 
@@ -140,10 +141,10 @@ namespace TypeClipboard
             switch (hkt)
             {
                 case HotkeyTypes.PASTE:
-                    pasteHKBtn.Text = "Hotkey: " + key;
+                    pasteHKBtn.Text = "Paste Hotkey: " + key;
                     break;
                 case HotkeyTypes.CANCEL:
-                    cancelHKBtn.Text = "Hotkey: " + key;
+                    cancelHKBtn.Text = "Cancel Hotkey: " + key;
                     break;
             }
             Listening = null;

@@ -125,7 +125,7 @@
             cancelHKBtn.Name = "cancelHKBtn";
             cancelHKBtn.Size = new Size(155, 23);
             cancelHKBtn.TabIndex = 9;
-            cancelHKBtn.Text = "Cancel Hotkey: F8";
+            cancelHKBtn.Text = "Cancel Hotkey: F7";
             cancelHKBtn.UseVisualStyleBackColor = true;
             cancelHKBtn.Click += Cancel_HK_Btn_Click;
             // 

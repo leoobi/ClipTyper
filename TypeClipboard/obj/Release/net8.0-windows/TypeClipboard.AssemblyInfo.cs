@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TypeClipboard")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25b803f220bc5f57109cae477e7a7ccb4d537f5a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87a2f7a961e2f04bdf0fae72a6c379c7d054d9e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("TypeClipboard")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TypeClipboard")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -15,45 +15,47 @@ namespace TypeClipboard
         [DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();
 
-        public static async void TypeText(String str)
+        public static async Task TypeText(string str)
         {
-            if (GetForegroundWindow() == ActivePaster.getInstance().Handle) return;
-            await Task.Run(() =>
+            if (GetForegroundWindow() == ActivePaster.getInstance().Handle)
+                return;
+
+            IsTyping = true;
+
+            foreach (char c in str)
             {
-                IsTyping = true;
-                foreach (Char c in str.ToCharArray())
+                if (!IsTyping)
+                    break;
+
+                if (specialChars.Contains(c))
                 {
-                    if (!IsTyping)
-                    {
-                        return;
-                    }
-                    if (specialChars.Contains(c))
-                    {
-                        SendKeys.SendWait("{" + c + "}");
-                    } else if (c == '^')
-                    {
-                        SendCaretGerman();
-                    }
-                    else
-                    {
-                        SendKeys.SendWait(c.ToString());
-                    }
+                    SendKeys.SendWait("{" + c + "}");
                 }
-                if (autoSubmit)
+                else if (c == '^')
                 {
-                    SendKeys.SendWait("{ENTER}");
+                    SendCaretGerman();
                 }
-                IsTyping = false;
-            });
+                else
+                {
+                    SendKeys.SendWait(c.ToString());
+                }
+            }
+
+            if (IsTyping && autoSubmit)
+            {
+                SendKeys.SendWait("{ENTER}");
+            }
+
+            IsTyping = false;
         }
 
-        public static void TypeClipboard()
+        public static async void TypeClipboard()
         {
             if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
             {
                 String clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);
 
-                TypeText(clipboard);
+                await TypeText(clipboard);
             }
         }
 

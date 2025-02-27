@@ -78,19 +78,16 @@ namespace TypeClipboard.LLL
 
                     if (MainPaster.GetInstance().Listening == null)
                     {
+                        if (_currentHotkeyCandidate.Equals(Properties.Settings.Default.CancelHotkey, StringComparison.OrdinalIgnoreCase))
+                        {
+                            Typer.IsTyping = false;
+                            return new IntPtr(1);
+                        }
                         if (_currentHotkeyCandidate.Equals(Properties.Settings.Default.PasteHotkey, StringComparison.OrdinalIgnoreCase) && !Typer.IsTyping)
                         {
                             Typer.TypeClipboard();
-                            return new nint(1);
+                            return new IntPtr(1);
                         }
-                        else if (_currentHotkeyCandidate.Equals(Properties.Settings.Default.CancelHotkey, StringComparison.OrdinalIgnoreCase))
-                        {
-                            Typer.IsTyping = false;
-                            return new nint(1);
-                        }
-                    } else
-                    {
-                        return new nint(1);
                     }
 
                     OnKeyPressed?.Invoke(this, new KeyPressedArgs(key));
