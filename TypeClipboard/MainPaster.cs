@@ -66,16 +66,36 @@ namespace TypeClipboard
 
         public void UpdateTextbox(object? sender = null, EventArgs? e = null)
         {
-            if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
+            bool success = false;
+            int retries = 10;
+            while (!success && retries > 0)
             {
-                String clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);
-                textBox1.Text = clipboard;
+                try
+                {
+                    if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
+                    {
+                        string clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);
+                        textBox1.Text = clipboard;
+                    }
+                    else
+                    {
+                        textBox1.Text = "No text in clipboard";
+                    }
+
+                    success = true;
+                }
+                catch (Exception ex)
+                {
+                    retries--;
+                    Thread.Sleep(100);
+                }
             }
-            else
+            if (!success)
             {
-                textBox1.Text = "No text in clipboard";
+                textBox1.Text = "Clipboard access failed";
             }
         }
+
 
         private void Form1_Activated(object sender, EventArgs e)
         {

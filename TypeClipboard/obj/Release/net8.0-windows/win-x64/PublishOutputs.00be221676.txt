@@ -1,3 +1,8 @@
 C:\Users\leoob\Downloads\TypeClipboard.pdb
 C:\Users\leoob\Downloads\TypeClipboard.dll.config
+C:\Users\leoob\Downloads\D3DCompiler_47_cor3.dll
+C:\Users\leoob\Downloads\PenImc_cor3.dll
+C:\Users\leoob\Downloads\PresentationNative_cor3.dll
+C:\Users\leoob\Downloads\vcruntime140_cor3.dll
+C:\Users\leoob\Downloads\wpfgfx_cor3.dll
 C:\Users\leoob\Downloads\TypeClipboard.exe
