@@ -35,14 +35,28 @@ namespace TypeClipboard
 
         public void UpdateTextbox(object? sender = null, EventArgs? e = null)
         {
-            if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
+            if (Properties.Settings.Default.HideClipboardText)
             {
-                String clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);
-                textBox1.Text = clipboard;
+                if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
+                {
+                    textBox1.Text = "Clipboard Text Hidden";
+                }
+                else
+                {
+                    textBox1.Text = "No text in clipboard";
+                }
             }
             else
             {
-                textBox1.Text = "No text in clipboard";
+                if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
+                {
+                    string clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);
+                    textBox1.Text = clipboard;
+                }
+                else
+                {
+                    textBox1.Text = "No text in clipboard";
+                }
             }
         }
 

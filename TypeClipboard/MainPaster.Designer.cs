@@ -35,6 +35,7 @@
             textBox2 = new TextBox();
             button3 = new Button();
             chkEnter = new CheckBox();
+            chkHideClipboard = new CheckBox();
             toolTip1 = new ToolTip(components);
             pasteHKBtn = new Button();
             cancelHKBtn = new Button();
@@ -103,17 +104,28 @@
             chkEnter.UseVisualStyleBackColor = true;
             chkEnter.CheckedChanged += CBEnter_CheckedChanged;
             // 
+            // chkHideClipboard
+            // 
+            chkHideClipboard.AutoSize = true;
+            chkHideClipboard.Location = new Point(248, 112);
+            chkHideClipboard.Name = "chkHideClipboard";
+            chkHideClipboard.Size = new Size(146, 19);
+            chkHideClipboard.TabIndex = 8;
+            chkHideClipboard.Text = "Hide Clipboard Text";
+            chkHideClipboard.UseVisualStyleBackColor = true;
+            chkHideClipboard.CheckedChanged += CBHideClipboard_CheckedChanged;
+            //
             // toolTip1
-            // 
+            //
             toolTip1.ShowAlways = true;
-            // 
+            //
             // pasteHKBtn
             // 
             pasteHKBtn.AccessibleName = "";
             pasteHKBtn.Location = new Point(12, 58);
             pasteHKBtn.Name = "pasteHKBtn";
             pasteHKBtn.Size = new Size(155, 23);
-            pasteHKBtn.TabIndex = 8;
+            pasteHKBtn.TabIndex = 9;
             pasteHKBtn.Text = "Paste Hotkey: F8";
             pasteHKBtn.UseVisualStyleBackColor = true;
             pasteHKBtn.Click += Paste_HK_Btn_Click;
@@ -124,7 +136,7 @@
             cancelHKBtn.Location = new Point(178, 58);
             cancelHKBtn.Name = "cancelHKBtn";
             cancelHKBtn.Size = new Size(155, 23);
-            cancelHKBtn.TabIndex = 9;
+            cancelHKBtn.TabIndex = 10;
             cancelHKBtn.Text = "Cancel Hotkey: F7";
             cancelHKBtn.UseVisualStyleBackColor = true;
             cancelHKBtn.Click += Cancel_HK_Btn_Click;
@@ -136,7 +148,7 @@
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
             label1.Size = new Size(87, 15);
-            label1.TabIndex = 10;
+            label1.TabIndex = 11;
             label1.Text = "Clipboard Text";
             // 
             // label2
@@ -146,7 +158,7 @@
             label2.Location = new Point(12, 129);
             label2.Name = "label2";
             label2.Size = new Size(72, 15);
-            label2.TabIndex = 11;
+            label2.TabIndex = 12;
             label2.Text = "Buffer Text";
             // 
             // MainPaster
@@ -158,6 +170,7 @@
             Controls.Add(cancelHKBtn);
             Controls.Add(pasteHKBtn);
             Controls.Add(chkEnter);
+            Controls.Add(chkHideClipboard);
             Controls.Add(button3);
             Controls.Add(textBox2);
             Controls.Add(button2);
@@ -184,6 +197,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox chkEnter;
+        private System.Windows.Forms.CheckBox chkHideClipboard;
         private System.Windows.Forms.ToolTip toolTip1;
         private Button pasteHKBtn;
         private Button cancelHKBtn;
