@@ -35,6 +35,7 @@
             textBox2 = new TextBox();
             button3 = new Button();
             chkEnter = new CheckBox();
+            chkHide = new CheckBox();
             toolTip1 = new ToolTip(components);
             pasteHKBtn = new Button();
             cancelHKBtn = new Button();
@@ -102,7 +103,19 @@
             toolTip1.SetToolTip(chkEnter, "If set, Type will type newline (\\n) as Enter, which is useful for large blobs of text.\r\n\r\nIf unset, Type will stop before the first newline, which is useful for passwords.");
             chkEnter.UseVisualStyleBackColor = true;
             chkEnter.CheckedChanged += CBEnter_CheckedChanged;
-            // 
+
+            // chkHide
+            //
+            chkHide.AutoSize = true;
+            chkHide.Location = new Point(248, 112);
+            chkHide.Name = "chkHide";
+            chkHide.Size = new Size(88, 19);
+            chkHide.TabIndex = 12;
+            chkHide.Text = "Hide text";
+            chkHide.UseVisualStyleBackColor = true;
+            chkHide.CheckedChanged += CBHide_CheckedChanged;
+
+            //
             // toolTip1
             // 
             toolTip1.ShowAlways = true;
@@ -157,6 +170,7 @@
             Controls.Add(label1);
             Controls.Add(cancelHKBtn);
             Controls.Add(pasteHKBtn);
+            Controls.Add(chkHide);
             Controls.Add(chkEnter);
             Controls.Add(button3);
             Controls.Add(textBox2);
@@ -184,6 +198,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox chkEnter;
+        private System.Windows.Forms.CheckBox chkHide;
         private System.Windows.Forms.ToolTip toolTip1;
         private Button pasteHKBtn;
         private Button cancelHKBtn;

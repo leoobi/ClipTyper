@@ -38,7 +38,14 @@ namespace TypeClipboard
             if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
             {
                 String clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);
-                textBox1.Text = clipboard;
+                if (Properties.Settings.Default.HideClipboardText)
+                {
+                    textBox1.Text = "Clipboard Text Hidden";
+                }
+                else
+                {
+                    textBox1.Text = clipboard;
+                }
             }
             else
             {

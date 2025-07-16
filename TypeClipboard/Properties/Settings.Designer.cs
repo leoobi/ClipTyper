@@ -58,5 +58,17 @@ namespace TypeClipboard.Properties {
                 this["CancelHotkey"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HideClipboardText {
+            get {
+                return ((bool)(this["HideClipboardText"]));
+            }
+            set {
+                this["HideClipboardText"] = value;
+            }
+        }
     }
 }

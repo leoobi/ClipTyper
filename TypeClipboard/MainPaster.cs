@@ -120,6 +120,7 @@ namespace TypeClipboard
             cancelHKBtn.Text = "Cancel Hotkey: " + Properties.Settings.Default.CancelHotkey;
 
             chkEnter.Checked = Properties.Settings.Default.enableEnter;
+            chkHide.Checked = Properties.Settings.Default.HideClipboardText;
 
             ClipboardNotification.ClipboardUpdate += UpdateTextbox;
             UpdateTextbox();
@@ -141,6 +142,12 @@ namespace TypeClipboard
         {
             Properties.Settings.Default.enableEnter = chkEnter.Checked;
             Typer.AutoSubmit = chkEnter.Checked;
+            Properties.Settings.Default.Save();
+        }
+
+        private void CBHide_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.HideClipboardText = chkHide.Checked;
             Properties.Settings.Default.Save();
         }
 
