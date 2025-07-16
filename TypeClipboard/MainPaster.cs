@@ -17,6 +17,7 @@ namespace TypeClipboard
         private static MainPaster? instance;
         private HotkeyTypes? listening;
         private bool initiateTermination = false;
+        private String bufferText = String.Empty;
 
         public HotkeyTypes? Listening { get => listening; set => listening = value; }
 
@@ -75,7 +76,7 @@ namespace TypeClipboard
                     if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
                     {
                         string clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);
-                        textBox1.Text = clipboard;
+                        textBox1.Text = Properties.Settings.Default.HideClipboardText ? "******************" : clipboard;
                     }
                     else
                     {
@@ -134,8 +135,13 @@ namespace TypeClipboard
 
         private void ToBuffer_Click(object sender, EventArgs e)
         {
-            String clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);
-            textBox2.Text = clipboard;
+            bufferText = Clipboard.GetText(TextDataFormat.UnicodeText);
+            UpdateBufferVisibility();
+        }
+
+        public void UpdateBufferVisibility()
+        {
+            textBox2.Text = Properties.Settings.Default.HideClipboardText ? "******************" : bufferText;
         }
 
         private void CBEnter_CheckedChanged(object sender, EventArgs e)
@@ -145,10 +151,19 @@ namespace TypeClipboard
             Properties.Settings.Default.Save();
         }
 
+        public void setHideCheck(bool check)
+        {
+            chkHide.Checked = check;
+        }
+
         private void CBHide_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.HideClipboardText = chkHide.Checked;
             Properties.Settings.Default.Save();
+            ActivePaster.GetInstance().setHideCheck(chkHide.Checked);
+            UpdateTextbox();
+            UpdateBufferVisibility();
+            ActivePaster.GetInstance().UpdateTextbox();
         }
 
         private void Paste_HK_Btn_Click(object sender, EventArgs e)

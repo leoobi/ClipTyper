@@ -17,7 +17,7 @@ namespace TypeClipboard
 
         public static async Task TypeText(string str)
         {
-            if (GetForegroundWindow() == ActivePaster.getInstance().Handle)
+            if (GetForegroundWindow() == ActivePaster.GetInstance().Handle)
                 return;
 
             IsTyping = true;
