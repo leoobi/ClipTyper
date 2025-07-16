@@ -130,7 +130,7 @@ namespace TypeClipboard
 
         private void BufferType_Click(object sender, EventArgs e)
         {
-            Typer.TypeText(textBox2.Text);
+            Typer.TypeText(bufferText);
         }
 
         private void ToBuffer_Click(object sender, EventArgs e)
