@@ -163,7 +163,7 @@ namespace TypeClipboard.LLL
             {
                 MainPaster.GetInstance().Invoke((MethodInvoker)delegate
                 {
-                    _activePaster = ActivePaster.getInstance();
+                    _activePaster = ActivePaster.GetInstance();
                     _activePaster.Show();
                     _activePaster.BringToFront();
                     if (GetCursorPos(out POINT p))
