@@ -11,5 +11,8 @@
     <Setting Name="CancelHotkey" Type="System.String" Scope="User">
       <Value Profile="(Default)">F7</Value>
     </Setting>
+    <Setting Name="HideClipboardText" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

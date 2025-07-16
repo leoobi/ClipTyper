@@ -35,6 +35,12 @@ namespace TypeClipboard
 
         public void UpdateTextbox(object? sender = null, EventArgs? e = null)
         {
+            if (Properties.Settings.Default.HideClipboardText)
+            {
+                textBox1.Text = "Clipboard Text Hidden";
+                return;
+            }
+
             if (Clipboard.ContainsText(TextDataFormat.UnicodeText))
             {
                 String clipboard = Clipboard.GetText(TextDataFormat.UnicodeText);

@@ -35,6 +35,7 @@
             textBox2 = new TextBox();
             button3 = new Button();
             chkEnter = new CheckBox();
+            chkHideClipboard = new CheckBox();
             toolTip1 = new ToolTip(components);
             pasteHKBtn = new Button();
             cancelHKBtn = new Button();
@@ -102,9 +103,20 @@
             toolTip1.SetToolTip(chkEnter, "If set, Type will type newline (\\n) as Enter, which is useful for large blobs of text.\r\n\r\nIf unset, Type will stop before the first newline, which is useful for passwords.");
             chkEnter.UseVisualStyleBackColor = true;
             chkEnter.CheckedChanged += CBEnter_CheckedChanged;
-            // 
+            //
+            // chkHideClipboard
+            //
+            chkHideClipboard.AutoSize = true;
+            chkHideClipboard.Location = new Point(12, 115);
+            chkHideClipboard.Name = "chkHideClipboard";
+            chkHideClipboard.Size = new Size(168, 19);
+            chkHideClipboard.TabIndex = 12;
+            chkHideClipboard.Text = "Hide Clipboard Text in Menu";
+            chkHideClipboard.UseVisualStyleBackColor = true;
+            chkHideClipboard.CheckedChanged += CHKHideClipboard_CheckedChanged;
+            //
             // toolTip1
-            // 
+            //
             toolTip1.ShowAlways = true;
             // 
             // pasteHKBtn
@@ -158,6 +170,7 @@
             Controls.Add(cancelHKBtn);
             Controls.Add(pasteHKBtn);
             Controls.Add(chkEnter);
+            Controls.Add(chkHideClipboard);
             Controls.Add(button3);
             Controls.Add(textBox2);
             Controls.Add(button2);
@@ -184,6 +197,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.CheckBox chkEnter;
+        private System.Windows.Forms.CheckBox chkHideClipboard;
         private System.Windows.Forms.ToolTip toolTip1;
         private Button pasteHKBtn;
         private Button cancelHKBtn;
